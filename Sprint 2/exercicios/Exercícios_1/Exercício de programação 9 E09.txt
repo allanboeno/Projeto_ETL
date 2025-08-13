@@ -1,0 +1,12 @@
+with q1 as (
+select ven.cdpro, ven.nmpro, count(ven.cdpro) as contagem
+from tbvendas ven
+left join tbestoqueproduto est on ven.cdpro = est.cdpro
+where (ven.dtven BETWEEN '2014-02-03 00:00:00' and '2018-02-02 00:00:00') AND 
+(ven.status = 'Concluído')
+)
+select cdpro, nmpro
+from q1
+group by nmpro
+order by contagem desc
+limit 1

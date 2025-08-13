@@ -1,0 +1,34 @@
+class Passaro:
+    def __init__ (self, voar, emitir_som):
+        self.voar = voar
+        self.emitir_som = emitir_som
+
+class Pato(Passaro):
+    def __init__ (self, voar, emitir_som):
+        super().__init__(voar, emitir_som)
+        print('Pato')
+        print('Voando...')
+        print('Pato emitindo som...')
+
+    def __str__(self):
+        return "Quack"
+
+
+class Pardal(Passaro):
+    def __init__ (self, voar, emitir_som):
+        super().__init__(voar, emitir_som)
+        print('Pardal')
+        print('Voando...')
+        print('Pardal emitindo som...')
+
+    def __str__(self):
+        return "Piu Piu"
+    
+if __name__ == '__main__':
+
+    pato = Pato(voar = True, emitir_som = True)
+    print (pato)
+
+    pardal = Pardal(voar = True, emitir_som = True)
+    print (pardal)
+        

@@ -1,0 +1,9 @@
+with q1 as (
+select a.nome, count(l.cod) as quantidade_publicacoes
+from autor a
+left join livro l on l.autor = a.codautor
+group by a.nome
+)
+select nome
+from q1
+where quantidade_publicacoes = 0

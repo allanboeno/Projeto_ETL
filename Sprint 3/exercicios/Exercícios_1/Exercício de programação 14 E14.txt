@@ -1,0 +1,9 @@
+def valor(*args, **kwargs):
+    for arg in args:
+        print (f'{arg}')
+        
+    for chave, valor in kwargs.items():
+        print (f'{valor}')
+        
+valor (1, 3, 4, 'hello', parametro_nomeado='alguma coisa', x=20)
+        

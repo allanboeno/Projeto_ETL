@@ -1,0 +1,10 @@
+services:
+  bucket_dados1:
+    image: bucket_dados1
+    build: .
+    env_file:
+      - keys.env
+    volumes:
+      - ./movies.csv:/bucket/csv_files/movies.csv
+      - ./series.csv:/bucket/csv_files/series.csv
+    command: ["python", "Script.py"]

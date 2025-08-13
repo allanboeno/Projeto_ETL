@@ -1,0 +1,19 @@
+import csv
+
+def calcular_media(notas):
+    maiores = sorted(notas, reverse = True)[:3]
+    media = sum(maiores) / len(maiores)
+    return round(media,2)
+
+
+
+with open('estudantes.csv', 'r') as file:
+    estudantes = csv.reader(file)
+
+    for row in sorted(estudantes):
+        nome = row[0]
+        notas = list(map(int, row[1:]))
+        maiores = sorted(notas, reverse = True)[:3]
+        final = calcular_media(notas)
+        print (f"Nome: {nome} Notas: {maiores} Média: {final}")
+        

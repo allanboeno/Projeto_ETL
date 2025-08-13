@@ -1,0 +1,122 @@
+[
+    {
+        "Title": "Dilwale Dulhania Le Jayenge",
+        "Popularity": 53.84,
+        "Vote_Average": 8.536,
+        "Vote_Count": 4402
+    },
+    {
+        "Title": "Your Name.",
+        "Popularity": 104.509,
+        "Vote_Average": 8.492,
+        "Vote_Count": 11069
+    },
+    {
+        "Title": "Forrest Gump",
+        "Popularity": 119.581,
+        "Vote_Average": 8.475,
+        "Vote_Count": 26823
+    },
+    {
+        "Title": "Cinema Paradiso",
+        "Popularity": 43.217,
+        "Vote_Average": 8.451,
+        "Vote_Count": 4229
+    },
+    {
+        "Title": "Gabriel's Inferno",
+        "Popularity": 12.332,
+        "Vote_Average": 8.42,
+        "Vote_Count": 2400
+    },
+    {
+        "Title": "Gabriel's Inferno: Part II",
+        "Popularity": 11.825,
+        "Vote_Average": 8.398,
+        "Vote_Count": 1507
+    },
+    {
+        "Title": "Gabriel's Inferno: Part III",
+        "Popularity": 19.727,
+        "Vote_Average": 8.379,
+        "Vote_Count": 1047
+    },
+    {
+        "Title": "A Brighter Summer Day",
+        "Popularity": 16.322,
+        "Vote_Average": 8.3,
+        "Vote_Count": 298
+    },
+    {
+        "Title": "Modern Times",
+        "Popularity": 17.689,
+        "Vote_Average": 8.296,
+        "Vote_Count": 3589
+    },
+    {
+        "Title": "City Lights",
+        "Popularity": 33.191,
+        "Vote_Average": 8.3,
+        "Vote_Count": 2089
+    },
+    {
+        "Title": "Five Feet Apart",
+        "Popularity": 50.135,
+        "Vote_Average": 8.268,
+        "Vote_Count": 5475
+    },
+    {
+        "Title": "Josee, the Tiger and the Fish",
+        "Popularity": 25.89,
+        "Vote_Average": 8.266,
+        "Vote_Count": 434
+    },
+    {
+        "Title": "Given",
+        "Popularity": 15.801,
+        "Vote_Average": 8.264,
+        "Vote_Count": 377
+    },
+    {
+        "Title": "Life in a Year",
+        "Popularity": 54.526,
+        "Vote_Average": 8.261,
+        "Vote_Count": 1793
+    },
+    {
+        "Title": "Clouds",
+        "Popularity": 19.706,
+        "Vote_Average": 8.3,
+        "Vote_Count": 986
+    },
+    {
+        "Title": "Violet Evergarden: The Movie",
+        "Popularity": 27.751,
+        "Vote_Average": 8.249,
+        "Vote_Count": 397
+    },
+    {
+        "Title": "Rascal Does Not Dream of a Dreaming Girl",
+        "Popularity": 22.912,
+        "Vote_Average": 8.238,
+        "Vote_Count": 507
+    },
+    {
+        "Title": "I Want to Eat Your Pancreas",
+        "Popularity": 36.091,
+        "Vote_Average": 8.227,
+        "Vote_Count": 1490
+    },
+    {
+        "Title": "The Handmaiden",
+        "Popularity": 51.85,
+        "Vote_Average": 8.222,
+        "Vote_Count": 3593
+    },
+    {
+        "Title": "The Apartment",
+        "Popularity": 27.128,
+        "Vote_Average": 8.2,
+        "Vote_Count": 2200
+    }
+]

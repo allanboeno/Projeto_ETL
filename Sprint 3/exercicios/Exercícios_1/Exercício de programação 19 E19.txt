@@ -1,0 +1,17 @@
+import random
+
+random_list = random.sample(range(500), 50)
+sorted_list = sorted(random_list)
+
+if len(sorted_list) % 2 == 0:
+  mediana = (sorted_list[len(random_list)//2 - 1] + sorted_list[len(random_list)//2]) / 2
+else:
+  mediana = sorted_list[len(random_list)//2]
+ 
+ 
+media = sum(int(num) for num in random_list)/50
+valor_minimo = min(int(num) for num in random_list)
+valor_maximo = max(int(num) for num in random_list)
+
+
+print (f'Media: {media}, Mediana: {mediana}, Mínimo: {valor_minimo}, Máximo: {valor_maximo}')

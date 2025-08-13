@@ -1,0 +1,19 @@
+from functools import reduce
+
+def calcula_saldo(lancamentos) -> float:
+    tipo = map(lambda t: t[1], lancamentos)
+    saldos = map(lambda s: s[0], lancamentos)
+
+    calculo = reduce(lambda c, proximo: c + proximo[0] if proximo[1] == 'C' else c - proximo[0], lancamentos, 0)
+    return calculo 
+
+
+lancamentos = [
+    (10,'D'),
+    (300,'C'), 
+    (20,'C'), 
+    (80,'D'), 
+    (300,'D')
+]
+     
+print (calcula_saldo(lancamentos))

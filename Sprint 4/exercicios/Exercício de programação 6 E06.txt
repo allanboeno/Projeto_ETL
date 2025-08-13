@@ -1,0 +1,14 @@
+def maiores_que_media(conteudo:dict)->list:
+    media = sum(conteudo.values()) / len(conteudo)
+    maiores = [(chave, valor) for chave, valor in conteudo.items() if valor>media]
+    return sorted(maiores, key=lambda x: x[1])
+    
+conjunto = {
+"Arroz": 4.99,
+"Feijão": 3.49,
+"Macarrão": 2.99,
+"Leite": 3.29,
+"Pão": 1.99
+}
+
+print (maiores_que_media(conjunto))

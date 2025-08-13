@@ -1,0 +1,7 @@
+palavras = ['maça', 'arara', 'audio', 'radio', 'radar', 'moto']
+for palavra in palavras:
+  palavra_invert = palavra[::-1]
+  if palavra == palavra_invert:
+    print ("A palavra: {} é um palíndromo" .format(palavra))
+  else:
+    print ("A palavra: {} não é um palíndromo" .format(palavra))

@@ -1,0 +1,10 @@
+# Ler o arquivo README.md
+arquivo_texto = spark.read.text("README.md")
+
+# Dividir o texto em palavras e contar a ocorrência de cada palavra
+palavras = arquivo_texto.rdd.flatMap(lambda linha: linha.value.split(" ")) \
+                            .map(lambda palavra: (palavra, 1)) \
+                            .reduceByKey(lambda a, b: a + b)
+
+# Coletar e exibir os resultados
+palavras.collect()

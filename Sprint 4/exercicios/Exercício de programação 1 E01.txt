@@ -1,0 +1,11 @@
+with open ('number.txt', 'r') as number
+    conteudo = map(int, number.readlines())
+    
+    maiores = filter(lambda n n % 2==0 , conteudo)
+    
+    maiores = sorted(list(maiores), reverse = True)
+    
+    total = sum(maiores[5])
+
+print (maiores[5])
+print (total)

@@ -1,0 +1,6 @@
+numeros = list(range(1,4))
+for numero in numeros:
+  if numero%2 == 1:
+    print ("Ímpar: {}" .format(numero))
+  else:
+    print ("Par: {}" .format(numero))

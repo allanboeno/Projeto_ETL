@@ -1,0 +1,6 @@
+select DISTINCT a.nome
+from autor a
+left join livro l on a.codautor = l.autor
+left join editora ed on l.editora = ed.codeditora
+left join endereco en on en.codendereco = ed.endereco
+where en.estado NOT IN ('PARANÁ', 'RIO GRANDE DO SUL');

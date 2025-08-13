@@ -1,0 +1,9 @@
+lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+part_size = len(lista) // 3
+
+parte1 = lista[0:part_size]
+parte2 = lista[part_size:8]
+parte3 = lista[2 * part_size:]
+
+print(f'{parte1} {parte2} {parte3}')
