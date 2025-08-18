@@ -1,2 +1,0 @@
-docker build -t mascarar-dados .
-docker run -it mascarar-dados 

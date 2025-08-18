@@ -1,9 +1,0 @@
-with q1 as (select v1.cdvdd, v1.nmvdd, count(v2.cdven) as contagem
-from tbvendedor v1
-left join tbvendas v2 on v1.cdvdd = v2.cdvdd
-group by nmvdd
-order by contagem DESC 
-)
-select cdvdd, nmvdd
-from q1
-limit 1

@@ -1,4 +1,0 @@
-Dentro do arquivo crontab
-
-27 15 * * 1-4 sh processamento_de_vendas.sh
-

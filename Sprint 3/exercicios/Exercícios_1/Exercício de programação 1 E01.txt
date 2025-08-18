@@ -1,8 +1,0 @@
-import datetime
-
-nome = "Allan"
-idade = 20
-ano = datetime.datetime.now().year
-anoFinal = (ano - idade) + 100
-
-print (anoFinal)

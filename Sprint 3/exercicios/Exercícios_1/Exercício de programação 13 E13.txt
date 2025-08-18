@@ -1,4 +1,0 @@
-with open ('arquivo_texto.txt', 'r') as arquivo:
-    texto = arquivo.read().strip()
-
-print (texto, end="")

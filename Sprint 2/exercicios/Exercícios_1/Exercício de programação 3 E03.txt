@@ -1,6 +1,0 @@
-select count(l.editora) as quantidade, e.nome, ed.estado, ed.cidade
-from livro l
-left join editora e on l.editora = e.codeditora 
-left join endereco ed on e.endereco = ed.codendereco
-group by l.editora
-order by quantidade desc

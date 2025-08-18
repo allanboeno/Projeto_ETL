@@ -1,4 +1,0 @@
-a = set (['abc', 'abc', 'abc', '123', 'abc', '123', '123'])
-lista = list(a)
-
-print (lista)

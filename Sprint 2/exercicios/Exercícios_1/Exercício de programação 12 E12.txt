@@ -1,8 +1,0 @@
-SELECT cddep, nmdep, dtnasc, SUM(vds.qtd * vds.vrunt) AS valor_total_vendas
-FROM tbdependente dep
-LEFT JOIN tbvendedor vdd ON dep.cdvdd = vdd.cdvdd
-LEFT JOIN tbvendas vds ON vdd.cdvdd = vds.cdvdd
-WHERE vds.status = 'Concluído'
-GROUP BY dep.nmdep
-ORDER BY valor_total_vendas
-LIMIT 1

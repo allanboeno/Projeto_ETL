@@ -1,9 +1,0 @@
-def pares_ate(n: int):
-    contador = 2
-    while contador <= n:
-        yield contador
-        contador += 2
-        
-for num in pares_ate(9):
-    if num % 2 == 0:
-        print(num)

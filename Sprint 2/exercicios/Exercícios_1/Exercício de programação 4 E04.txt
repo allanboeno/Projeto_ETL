@@ -1,5 +1,0 @@
-select a.nome, a.codautor, a.nascimento, count(l.cod) as quantidade
-from livro l 
-right join autor a on a.codautor = l.autor
-group by a.nome
-order by a.nome

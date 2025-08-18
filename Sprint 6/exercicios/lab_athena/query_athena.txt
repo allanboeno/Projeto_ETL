@@ -1,5 +1,0 @@
-SELECT nome, COUNT(*) AS quantidade
-FROM meubanco.nomes
-GROUP BY nome
-ORDER BY quantidade DESC
-LIMIT 3;

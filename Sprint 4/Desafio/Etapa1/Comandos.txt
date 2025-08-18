@@ -1,2 +1,0 @@
-docker build -t container_sprint .
-docker run -it container_sprint

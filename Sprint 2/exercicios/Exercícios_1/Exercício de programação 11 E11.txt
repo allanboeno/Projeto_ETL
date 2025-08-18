@@ -1,5 +1,0 @@
-SELECT cdcli, nmcli, SUM(qtd * vrunt) AS gasto
-FROM tbvendas
-GROUP BY nmcli
-ORDER BY gasto DESC
-LIMIT 1

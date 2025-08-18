@@ -1,4 +1,0 @@
-É possível com o comando docker start "nome ou id"
-Exemplos:
-docker start 5dbdeb9d5fee
-docker start goofy_northcutt 
