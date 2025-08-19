@@ -25,13 +25,14 @@ Por fim, as informações foram disponibilizadas em um **dashboard no Amazon Qui
 
 ## 📂 Estrutura do Projeto
 ```
-├── lambda/ # Funções para extração de dados da API TMDB
-├── glue/ # Scripts Spark para transformação de dados
-├── data-lake/
-│ ├── raw/ # Dados brutos
-│ ├── trusted/ # Dados tratados
-│ └── refined/ # Dados prontos para análise
-├── dashboards/ # Dashboards e análises criadas no QuickSight
+├── ETL/ # Parte de Engenharia de Dados
+│ ├── lambda/ # Funções para extração de dados da API TMDB
+│ └── glue/ # Scripts Spark para transformação de dados
+│
+├── BI/ # Parte de Business Intelligence
+│ ├── perguntas/ # Questões de negócio que o dashboard responde
+│ └── dashboards/ # Evidências e prints dos painéis no QuickSight
+│
 └── README.md # Documentação do projeto
 ```
 
