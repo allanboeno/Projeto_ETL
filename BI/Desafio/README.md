@@ -1,7 +1,3 @@
-# Desafio
-
-O objetivo do meu desafio teve uma grande mudança, eu tinha o objetivo de analisar de maneira geral as séries e filmes, porém ao chegar na sprint 9 e ter que criar o modelo multidimensional, percebi que a maneira que meus dados estavam estruturados não eram adequados, então no proximo tópico explico o novo objetivo
-
 ## Objetivo
 
 O objetivo da minha análise é realizar um estudo detalhado dos dados relacionados aos episódios e temporadas da série "Game of Thrones", fornecendo uma base sólida para a criação de insights valiosos e visualizações impactantes.

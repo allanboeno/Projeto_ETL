@@ -1,21 +1,39 @@
-# Desafio
+# Evidências
 
-O objetivo do meu desafio teve uma grande mudança, eu tinha o objetivo de analisar de maneira geral as séries e filmes, porém ao chegar na sprint 9 e ter que criar o modelo multidimensional, percebi que a maneira que meus dados estavam estruturados não eram adequados, então no proximo tópico explico o novo objetivo
+## Tabela Modelo Multidimensional:
+![Evidencia 1](evidencias/modelo_multidimensional.png)
 
-Como fiz essa mudança vou deixar uma pasta extra caso seja necessário, com os códigos referentes ao que eu teria feito nas sprints passadas, caso eu tivesse definido o tema antes.
+## Tabela dim_cast:
+![Evidencia 2](evidencias/dim_cast.png)
 
-[Código do lambda sprint 7](extra/lambda_sprint7.py)
+## Tabela dim_dates:
+![Evidencia 3](evidencias/dim_dates.png)
 
-[Código do Glue sprint 8](extra/job_glue_trusted_sprint8.py)
+## Tabela dim_directors:
+![Evidencia 4](evidencias/dim_directors.png)
+
+## Tabela dim_episodes:
+![Evidencia 5](evidencias/dim_episodes.png)
+
+## Tabela dim_seasons:
+![Evidencia 6](evidencias/dim_seasons.png)
+
+## Tabela fact_episodes:
+![Evidencia 7](evidencias/fact_episodes.png)
 
 
-## Objetivo
+# Projeto
 
 O objetivo da minha análise é realizar um estudo detalhado dos dados relacionados aos episódios e temporadas da série "Game of Thrones", fornecendo uma base sólida para a criação de insights valiosos e visualizações impactantes.
 
+[Código do Lambda](lambda.py)
+
+[Código do Glue](job_glue_trusted.py)
+
+
 ## Perguntas
 
-Essas perguntas podem passar por uma seleção quando chegar o momento de serem usadas no QuickSight.
+Possíveis perguntas para um relatório em BI
 
 ### Análise de Episódios e Temporadas
 
@@ -96,7 +114,6 @@ Essas perguntas podem passar por uma seleção quando chegar o momento de serem 
 Esse código foi feito para dividir os dados em uma modelagem multidimensional
 
 ![Modelo Multidimensional](modelo_multidimensional.png)
-
 
 
 ### Importar bibliotecas
