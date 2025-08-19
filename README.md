@@ -24,6 +24,7 @@ Por fim, as informações foram disponibilizadas em um **dashboard no Amazon Qui
 - **TMDB API**  
 
 ## 📂 Estrutura do Projeto
+```
 ├── lambda/ # Funções para extração de dados da API TMDB
 ├── glue/ # Scripts Spark para transformação de dados
 ├── data-lake/
@@ -32,6 +33,7 @@ Por fim, as informações foram disponibilizadas em um **dashboard no Amazon Qui
 │ └── refined/ # Dados prontos para análise
 ├── dashboards/ # Dashboards e análises criadas no QuickSight
 └── README.md # Documentação do projeto
+```
 
 ## 📊 Principais Análises no Dashboard
 - Variação da avaliação dos episódios ao longo das temporadas.  
