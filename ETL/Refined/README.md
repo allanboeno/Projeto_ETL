@@ -20,7 +20,7 @@ Este módulo contém o **AWS Glue Job** responsável por transformar os dados da
 ## 🖼 Modelo Multidimensional
 Abaixo está a representação do modelo dimensional criado na Refined Zone:
 
-![Modelo Multidimensional](evidencias/modelo_multidimensional.png)
+![Modelo Multidimensional](../evidencias/modelo_multidimensional.png)
 
 ## ⚙️ Parâmetros do Script
 - **JOB_NAME**: nome do job executado no Glue.  

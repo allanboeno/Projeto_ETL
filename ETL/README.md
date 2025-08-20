@@ -13,7 +13,7 @@ ETL/
  └── refined/   # Scripts Glue para modelagem dimensional e preparação para 
 ```
 
-# 🚀 Fluxo do ETL
+## 🚀 Fluxo do ETL
 
 1. **Raw Zone** (Extração) 🟢  
    - Funções AWS Lambda conectam à API TMDB.  
@@ -32,7 +32,7 @@ ETL/
 
 ---
 
-# 🛠 Tecnologias Utilizadas
+## 🛠 Tecnologias Utilizadas
 
 - **AWS Lambda** – Extração de dados da API TMDB.  
 - **AWS Glue (Spark)** – Transformação, limpeza e modelagem dimensional.  
@@ -42,7 +42,7 @@ ETL/
 
 ---
 
-# 📝 Observações
+## 📝 Observações
 
 - Os scripts já estão comentados, permitindo fácil entendimento do código.  
 - Cada camada do ETL possui seu próprio README detalhando **funcionalidades, parâmetros e fluxo de execução**.  
