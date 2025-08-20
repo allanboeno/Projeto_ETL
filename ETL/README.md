@@ -1,3 +1,5 @@
+# ETL - Data Lake TMDB (Game of Thrones)
+
 Esta pasta contém todos os **códigos e scripts relacionados ao processo de ETL** do Data Lake para a série **Game of Thrones**, utilizando dados da API do **TMDB**.  
 
 O objetivo é demonstrar o fluxo completo de **Extração, Transformação e Carga (ETL)** na AWS, preparando os dados para análises e dashboards no **Amazon QuickSight**.
