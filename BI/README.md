@@ -57,32 +57,32 @@ LEFT JOIN
 
 ### Dashboard Completo
 
-![Evidencia 7](../evidencias/dash_completo.png)
+![Evidencia 7](evidencias/dash_completo.png)
 
 ### Variação de notas nas temporadas:
 
-![Evidencia 1](../evidencias/dash_notas.png)
-![Evidencia 6](../evidencias/dash_notas2.png)
+![Evidencia 1](evidencias/dash_notas.png)
+![Evidencia 6](evidencias/dash_notas2.png)
 
 Nesta parte do dashboard, eu analiso como as avaliações dos episódios (representadas pela média, mínima e máxima das notas) variaram ao longo das temporadas. Como é possível observar, há um declínio acentuado a partir da sétima. Esse gráfico de linha nos ajuda a visualizar essa mudança de forma clara e direta, destacando a variação temporadas.
 A partir desse gráfico é possível filtrar o dashboard todo por temporada, clicando na temporada desejada no gráfico.
 
 ### Relação entre a quantidade de votos e a média de votos:
 
-![Evidencia 2](../evidencias/dash_dispersao.png)
+![Evidencia 2](evidencias/dash_dispersao.png)
 
 Este gráfico de dispersão mapeia a relação entre a contagem de votos e a média das notas dos episódios. Cada ponto representa um episódio, colorido de acordo com a temporada a que pertence. Com esse gráfico é possível perceber que mesmo a 8° temporada tendo decaído em avaliações, ela se destaca em número de votos. Esse gráfico nos ajuda a identificar padrões de avaliação e popularidade em um nível mais granular.
 
 ### Informações sobre os diretores:
 
-![Evidencia 3](../evidencias/dash_diretores.png)
-![Evidencia 4](../evidencias/dash_diretores2.png)
+![Evidencia 3](evidencias/dash_diretores.png)
+![Evidencia 4](evidencias/dash_diretores2.png)
 
 Aqui, trago uma visão focada nos diretores da série. Este gráfico de barras classifica os diretores de acordo com a média das notas dos episódios que eles dirigiram. Além disso, também é possível analisar a quantidade de episódios dirigidos por cada diretor, o que oferece um panorama sobre o impacto da contribuição de cada um na série. Dessa forma, é possível identificar quais diretores não só foram mais bem recebidos pelo público, mas também qual a sua participação em termos de quantidade de episódios dirigidos.
 
 ### Visão geral das temporadas e episódios:
 
-![Evidencia 5](../evidencias/dash_tabela.png)
+![Evidencia 5](evidencias/dash_tabela.png)
 
 Essa tabela é crucial para o dashboard, pois permite que o usuário acesse informações mais detalhadas. Quando clicamos no número da temporada, conseguimos visualizar os dados específicos de cada episódio. Isso torna a análise muito mais precisa e personalizada. Além de resumir as temporadas com a média de notas e a contagem de votos, a tabela facilita a exploração detalhada dos dados, permitindo uma compreensão mais profunda de como cada episódio se desempenhou dentro de sua respectiva temporada.
 
