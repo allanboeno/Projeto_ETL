@@ -1,49 +1,11 @@
-# Evidências
+# Transformação Final - Refined Zone
 
-## Tabela Modelo Multidimensional:
-![Evidencia 1](evidencias/modelo_multidimensional.png)
+Este script (`transform_refined.py`) é um job do AWS Glue que gera a camada final para consumo analítico (**Refined Zone**).  
 
-## Tabela dim_cast:
-![Evidencia 2](evidencias/dim_cast.png)
-
-## Tabela dim_dates:
-![Evidencia 3](evidencias/dim_dates.png)
-
-## Tabela dim_directors:
-![Evidencia 4](evidencias/dim_directors.png)
-
-## Tabela dim_episodes:
-![Evidencia 5](evidencias/dim_episodes.png)
-
-## Tabela dim_seasons:
-![Evidencia 6](evidencias/dim_seasons.png)
-
-## Tabela fact_episodes:
-![Evidencia 7](evidencias/fact_episodes.png)
-
-
-# Projeto
-
-O objetivo da minha análise é realizar um estudo detalhado dos dados relacionados aos episódios e temporadas da série "Game of Thrones", fornecendo uma base sólida para a criação de insights valiosos e visualizações impactantes.
-
-[Código do Lambda](lambda.py)
-
-[Código do Glue](job_glue_trusted.py)
-
-
-# Passos executados
-
-* Montei a parte visual do meu modelo multidimensional
-* Criei o glue para dividir a tabela e criar um modelo multidimensional
-* Criei novas perguntas para meu novo objetivo
-
-## Código do Glue para o csv
-
-[Código Completo](Desafio/got_multidimensional.py)
-
-Esse código foi feito para dividir os dados em uma modelagem multidimensional
-
-![Modelo Multidimensional](evidencias/modelo_multidimensional.png)
+## 🔑 Principais Funções
+- Enriquecimento dos dados (joins entre episódios e atores).  
+- Criação de colunas derivadas (ex: média de votos por temporada).  
+- Escrita em formato **Parquet** otimizado para consultas no Athena.  
 
 
 ### Importar bibliotecas
@@ -149,26 +111,3 @@ Esse código foi feito para dividir os dados em uma modelagem multidimensional
     dim_cast_df.write.parquet(cast_output_path, mode="overwrite")
     dim_directors_df.write.parquet(director_output_path, mode="overwrite")
     dim_dates_df.write.parquet(date_output_path, mode="overwrite")
-
-# Evidências
-
-## Tabela Modelo Multidimensional:
-![Evidencia 1](evidencias/modelo_multidimensional.png)
-
-## Tabela dim_cast:
-![Evidencia 2](evidencias/dim_cast.png)
-
-## Tabela dim_dates:
-![Evidencia 3](evidencias/dim_dates.png)
-
-## Tabela dim_directors:
-![Evidencia 4](evidencias/dim_directors.png)
-
-## Tabela dim_episodes:
-![Evidencia 5](evidencias/dim_episodes.png)
-
-## Tabela dim_seasons:
-![Evidencia 6](evidencias/dim_seasons.png)
-
-## Tabela fact_episodes:
-![Evidencia 7](evidencias/fact_episodes.png)
