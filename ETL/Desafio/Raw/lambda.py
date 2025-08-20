@@ -4,7 +4,7 @@ import boto3
 from datetime import datetime
 
 # Chave de API do TMDb
-api_key = '1af2f2525262ee4cd8d7926245f782bd'
+api_key = 'Insira aqui sua API key'
 
 # Configurar cliente do S3
 s3_client = boto3.client('s3')
