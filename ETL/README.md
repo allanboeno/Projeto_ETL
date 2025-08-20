@@ -11,7 +11,8 @@ ETL/
  ├── raw/       # Scripts Lambda para extração de dados da API TMDB
  ├── trusted/   # Scripts Glue para transformação e limpeza dos dados
  └── refined/   # Scripts Glue para modelagem dimensional e preparação para 
- 
+```
+
 # 🚀 Fluxo do ETL
 
 1. **Raw Zone** (Extração) 🟢  
