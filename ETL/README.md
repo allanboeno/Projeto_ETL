@@ -1,174 +1,48 @@
-# Evidências
+Esta pasta contém todos os **códigos e scripts relacionados ao processo de ETL** do Data Lake para a série **Game of Thrones**, utilizando dados da API do **TMDB**.  
 
-## Tabela Modelo Multidimensional:
-![Evidencia 1](evidencias/modelo_multidimensional.png)
+O objetivo é demonstrar o fluxo completo de **Extração, Transformação e Carga (ETL)** na AWS, preparando os dados para análises e dashboards no **Amazon QuickSight**.
 
-## Tabela dim_cast:
-![Evidencia 2](evidencias/dim_cast.png)
+---
 
-## Tabela dim_dates:
-![Evidencia 3](evidencias/dim_dates.png)
+## Estrutura da Pasta
 
-## Tabela dim_directors:
-![Evidencia 4](evidencias/dim_directors.png)
+```bash
+ETL/
+ ├── raw/       # Scripts Lambda para extração de dados da API TMDB
+ ├── trusted/   # Scripts Glue para transformação e limpeza dos dados
+ └── refined/   # Scripts Glue para modelagem dimensional e preparação para 
+ 
+# 🚀 Fluxo do ETL
 
-## Tabela dim_episodes:
-![Evidencia 5](evidencias/dim_episodes.png)
+1. **Raw Zone** (Extração) 🟢  
+   - Funções AWS Lambda conectam à API TMDB.  
+   - Extraem dados de episódios e atores da série.  
+   - Armazenam os dados em JSON na Raw Zone do S3.
 
-## Tabela dim_seasons:
-![Evidencia 6](evidencias/dim_seasons.png)
+2. **Trusted Zone** (Transformação) 🟡  
+   - Jobs AWS Glue leem os JSONs da Raw Zone.  
+   - Aplicam limpeza e padronização de dados.  
+   - Gravam os dados em Parquet particionados por `processing_date`.
 
-## Tabela fact_episodes:
-![Evidencia 7](evidencias/fact_episodes.png)
+3. **Refined Zone** (Refinamento) 🔵  
+   - Jobs AWS Glue leem os Parquets da Trusted Zone.  
+   - Criam modelo dimensional: **tabela de fatos** e **tabelas de dimensões**.  
+   - Gravam as tabelas finalizadas na Refined Zone, prontas para análise.
 
+---
 
-# Projeto
+# 🛠 Tecnologias Utilizadas
 
-O objetivo da minha análise é realizar um estudo detalhado dos dados relacionados aos episódios e temporadas da série "Game of Thrones", fornecendo uma base sólida para a criação de insights valiosos e visualizações impactantes.
+- **AWS Lambda** – Extração de dados da API TMDB.  
+- **AWS Glue (Spark)** – Transformação, limpeza e modelagem dimensional.  
+- **AWS S3** – Armazenamento do Data Lake em camadas (Raw, Trusted, Refined).  
+- **Amazon Athena** – Consulta SQL sobre os dados processados.  
+- **Amazon QuickSight** – Criação de dashboards interativos.
 
-[Código do Lambda](lambda.py)
+---
 
-[Código do Glue](job_glue_trusted.py)
+# 📝 Observações
 
-
-# Passos executados
-
-* Montei a parte visual do meu modelo multidimensional
-* Criei o glue para dividir a tabela e criar um modelo multidimensional
-* Criei novas perguntas para meu novo objetivo
-
-## Código do Glue para o csv
-
-[Código Completo](Desafio/got_multidimensional.py)
-
-Esse código foi feito para dividir os dados em uma modelagem multidimensional
-
-![Modelo Multidimensional](evidencias/modelo_multidimensional.png)
-
-
-### Importar bibliotecas
-    import sys  # Acesso a variáveis e funções do sistema, e argumentos de linha de comando
-    from pyspark.context import SparkContext  # Inicializa o contexto do Spark
-    from awsglue.context import GlueContext  # Inicializa o contexto do Glue
-    from awsglue.utils import getResolvedOptions  # Obtém parâmetros de entrada do job Glue
-    from pyspark.sql import functions as F  # Funções para manipulação de dados em DataFrames
-    from pyspark.sql.types import IntegerType, StringType, DoubleType, DateType  # Tipos de dados para colunas
-    from pyspark.sql.window import Window  # Funcionalidades para operações de janela
-    from datetime import datetime  # Manipulação de datas e horas
-
-### Inicialização do Glue e Spark
-    sc = SparkContext()
-    glueContext = GlueContext(sc)
-    spark = glueContext.spark_session
-
-### Parâmetros de entrada
-    args = getResolvedOptions(sys.argv, ['JOB_NAME', 'S3_INPUT_PATH', 'S3_OUTPUT_PATH'])
-    input_path = args['S3_INPUT_PATH']
-    output_path = args['S3_OUTPUT_PATH']
-
-### Caminhos dos arquivos Parquet
-    episodes_path = f'{input_path}/game_of_thrones_episodes/'
-    actors_path = f'{input_path}/game_of_thrones_actors/'
-
-### Leitura dos dados de episódios
-    episodes_df = spark.read.parquet(episodes_path)
-
-### Leitura dos dados de atores
-    actors_df = spark.read.parquet(actors_path)
-
-### Adicionar coluna de data de processamento
-    current_date = datetime.now()
-    episodes_df = episodes_df.withColumn('processing_date', F.lit(current_date).cast(DateType()))
-
-### Adicionar coluna ID na tabela de fatos
-    fact_episodes_df = episodes_df.withColumn('id', F.monotonically_increasing_id()).select(
-        F.col('id').cast(IntegerType()),
-        F.col('season').alias('season_id').cast(IntegerType()),
-        F.col('episode_number').cast(IntegerType()),
-        F.col('title').cast(StringType()),
-        F.col('vote_average').cast(DoubleType()),
-        F.col('vote_count').cast(IntegerType()),
-        F.col('air_date').cast(DateType()),
-        F.col('directors').cast(StringType()),
-        F.col('total_season_vote_count').cast(IntegerType()),
-        F.col('processing_date')
-    )
-
-### Definir tipos de dados para as tabelas de dimensão
-    dim_seasons_df = episodes_df.select(
-        F.col('season').alias('season_id').cast(IntegerType()),
-        F.col('season').cast(IntegerType()),
-        F.col('total_season_vote_count').alias('total_vote_count').cast(IntegerType())
-    ).distinct()
-
-    dim_episodes_df = episodes_df.select(
-        F.col('season').alias('season_id').cast(IntegerType()),
-        F.col('episode_number').cast(IntegerType()),
-        F.col('title').cast(StringType()),
-        F.col('air_date').cast(DateType())
-    ).distinct()
-
-### Criar IDs únicos para atores baseados em seus nomes e associar a episódios
-    dim_cast_df = actors_df.withColumn('actor_id', F.dense_rank().over(Window.orderBy('actor')).cast(IntegerType())).select(
-        F.col('season').cast(IntegerType()),
-        F.col('episode_number').cast(IntegerType()),
-        F.col('actor').cast(StringType()),
-        F.col('character').cast(StringType()),
-        F.col('actor_id').cast(IntegerType())
-    ).distinct()
-
-### Criar IDs únicos para diretores baseados em seus nomes
-    directors_df = episodes_df.select(F.explode(F.split(F.col('directors'), ',')).alias('director'))
-    directors_df = directors_df.withColumn('director_id', F.dense_rank().over(Window.orderBy('director')).cast(IntegerType()))
-    dim_directors_df = directors_df.select(
-        F.col('director_id').cast(IntegerType()),
-        F.col('director').alias('director_name').cast(StringType())
-    ).distinct()
-
-### Criar tabela de datas
-    dim_dates_df = episodes_df.select(
-        F.date_format('air_date', 'yyyyMMdd').alias('date_id').cast(IntegerType()),
-        F.col('air_date').alias('date').cast(DateType()),
-        F.year('air_date').alias('year').cast(IntegerType()),
-        F.month('air_date').alias('month').cast(IntegerType()),
-        F.dayofmonth('air_date').alias('day').cast(IntegerType())
-    ).distinct()
-
-### Caminhos de destino no S3
-    fact_output_path = f'{output_path}/fact_episodes'
-    season_output_path = f'{output_path}/dim_seasons'
-    episode_output_path = f'{output_path}/dim_episodes'
-    cast_output_path = f'{output_path}/dim_cast'
-    director_output_path = f'{output_path}/dim_directors'
-    date_output_path = f'{output_path}/dim_dates'
-
-### Escrever os dados particionados por processing_date
-    fact_episodes_df.write.partitionBy("processing_date").parquet(fact_output_path, mode="overwrite")
-    dim_seasons_df.write.parquet(season_output_path, mode="overwrite")
-    dim_episodes_df.write.parquet(episode_output_path, mode="overwrite")
-    dim_cast_df.write.parquet(cast_output_path, mode="overwrite")
-    dim_directors_df.write.parquet(director_output_path, mode="overwrite")
-    dim_dates_df.write.parquet(date_output_path, mode="overwrite")
-
-# Evidências
-
-## Tabela Modelo Multidimensional:
-![Evidencia 1](evidencias/modelo_multidimensional.png)
-
-## Tabela dim_cast:
-![Evidencia 2](evidencias/dim_cast.png)
-
-## Tabela dim_dates:
-![Evidencia 3](evidencias/dim_dates.png)
-
-## Tabela dim_directors:
-![Evidencia 4](evidencias/dim_directors.png)
-
-## Tabela dim_episodes:
-![Evidencia 5](evidencias/dim_episodes.png)
-
-## Tabela dim_seasons:
-![Evidencia 6](evidencias/dim_seasons.png)
-
-## Tabela fact_episodes:
-![Evidencia 7](evidencias/fact_episodes.png)
+- Os scripts já estão comentados, permitindo fácil entendimento do código.  
+- Cada camada do ETL possui seu próprio README detalhando **funcionalidades, parâmetros e fluxo de execução**.  
+- O projeto segue boas práticas de arquitetura de Data Lake e pode ser reexecutado para atualizar os dados a qualquer momento.

@@ -22,5 +22,3 @@ Este módulo contém o **AWS Glue Job** responsável por processar os dados brut
 3. Conversão para DynamicFrame (Glue).
 4. Escrita dos dados no S3 em formato Parquet, particionados por `processing_date`.
 5. Commit do job no Glue.
-
-## 📂 Estrutura de Saída no S3
