@@ -109,11 +109,11 @@ Possíveis perguntas para um relatório em BI
 
 ## Código do Glue para o csv
 
-[Código Completo](got_multidimensional.py)
+[Código Completo](Desafio/got_multidimensional.py)
 
 Esse código foi feito para dividir os dados em uma modelagem multidimensional
 
-![Modelo Multidimensional](modelo_multidimensional.png)
+![Modelo Multidimensional](evidencias/modelo_multidimensional.png)
 
 
 ### Importar bibliotecas
