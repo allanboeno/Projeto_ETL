@@ -10,9 +10,10 @@ O objetivo é demonstrar o fluxo completo de **Extração, Transformação e Car
 
 ```bash
 ETL/
- ├── raw/       # Scripts Lambda para extração de dados da API TMDB
- ├── trusted/   # Scripts Glue para transformação e limpeza dos dados
- └── refined/   # Scripts Glue para modelagem dimensional e preparação para 
+ ├── Raw/       # Scripts Lambda para extração de dados da API TMDB
+ ├── Trusted/   # Scripts Glue para transformação e limpeza dos dados
+ ├── Refined/   # Scripts Glue para modelagem dimensional e preparação para para análise
+ └── Evidencias/
 ```
 
 ## 🚀 Fluxo do ETL

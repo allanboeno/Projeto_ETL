@@ -26,21 +26,25 @@ Por fim, as informações foram disponibilizadas em um **dashboard no Amazon Qui
 ## 📂 Estrutura do Projeto
 ```
 ├── ETL/ # Parte de Engenharia de Dados
-│ ├── lambda/ # Funções para extração de dados da API TMDB
-│ └── glue/ # Scripts Spark para transformação de dados
-│
+│ ├── Raw/ # 📥 Funções para extração de dados da API TMDB
+│ ├── Trusted/ # 🔄 Scripts Spark para transformação e limpeza dos dados
+│ ├── Refined/ # 📊 Scripts para criação de datasets prontos para análise
+│ ├── Evidencias/ # Pasta com as evidências do projeto
+│ └── README.md # Documentação do projeto
+
 ├── BI/ # Parte de Business Intelligence
-│ ├── perguntas/ # Questões de negócio que o dashboard responde
-│ └── dashboards/ # Evidências e prints dos painéis no QuickSight
-│
+│ ├── Evidencias/ # Pasta com as evidências do projeto
+│ └── README.md # Documentação do projeto
+
+
 └── README.md # Documentação do projeto
 ```
 
 ## 📊 Principais Análises no Dashboard
-- Variação da avaliação dos episódios ao longo das temporadas.  
-- Popularidade da série em diferentes períodos.  
-- Ranking de diretores e episódios mais bem avaliados.  
-- Tabela interativa para explorar temporadas e episódios em detalhe.  
+- Variação da avaliação (média, mínimo e máximo) dos episódios ao longo das temporadas.
+- Relação entre votos recebidos e notas atribuídas aos episódios.
+- Ranking de diretores, com quantidade de episódios dirigidos e notas médias por temporada.
+- Tabela interativa com principais dados (notas e votos) para explorar temporadas e episódios em detalhe.  
 
 ## 👤 Autor
 Projeto desenvolvido por **Allan Gabriel** como estudo prático de **Engenharia de Dados e Cloud Computing**.  

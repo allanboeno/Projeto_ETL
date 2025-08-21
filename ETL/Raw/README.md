@@ -11,7 +11,7 @@ Este módulo contém a função **AWS Lambda** responsável por extrair os dados
   - `game_of_thrones_episodes_with_season_vote_counts_and_directors.json`
   - `game_of_thrones_actors.json`
 - Estrutura de particionamento no S3 por data (ano/mês/dia).
-- Armazenamento no bucket:
+- Armazenamento no bucket: `s3://data-lake-do-allan/Raw/TMDB/JSON/{ano}/{mês}/{dia}/`
 
 ⚙️ Parâmetros do Script
 -----------------------
